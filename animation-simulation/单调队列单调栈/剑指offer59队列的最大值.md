@@ -1,8 +1,8 @@
-> 如果阅读时，发现错误，或者动画不可以显示的问题可以添加我微信好友  **[tan45du_one](https://raw.githubusercontent.com/tan45du/tan45du.github.io/master/个人微信.15egrcgqd94w.jpg)** ，备注  github  + 题目 + 问题  向我反馈
+> 如果阅读时，发现错误，或者动画不可以显示的问题可以添加我微信好友 **[tan45du_one](https://raw.githubusercontent.com/tan45du/tan45du.github.io/master/个人微信.15egrcgqd94w.jpg)** ，备注 github + 题目 + 问题 向我反馈
 >
 > 感谢支持，该仓库会一直维护，希望对各位有一丢丢帮助。
 >
-> 另外希望手机阅读的同学可以来我的 <u>[**公众号：袁厨的算法小屋**](https://raw.githubusercontent.com/tan45du/test/master/微信图片_20210320152235.2pthdebvh1c0.png)</u> 两个平台同步，想要和题友一起刷题，互相监督的同学，可以在我的小屋点击<u>[**刷题小队**](https://raw.githubusercontent.com/tan45du/test/master/微信图片_20210320152235.2pthdebvh1c0.png)</u>进入。 
+> 另外希望手机阅读的同学可以来我的 <u>[**公众号：袁厨的算法小屋**](https://raw.githubusercontent.com/tan45du/test/master/微信图片_20210320152235.2pthdebvh1c0.png)</u> 两个平台同步，想要和题友一起刷题，互相监督的同学，可以在我的小屋点击<u>[**刷题小队**](https://raw.githubusercontent.com/tan45du/test/master/微信图片_20210320152235.2pthdebvh1c0.png)</u>进入。
 
 今天我们好好说说单调栈和单调队列。其实很容易理解，单调栈就是单调递增或单调递减的栈，栈内元素是有序的，单调队列同样也是。
 
@@ -20,15 +20,13 @@
 
 **示例 1：**
 
-> 输入: ["MaxQueue","push_back","push_back","max_value","pop_front","max_value"]
-> [[],[1],[2],[],[],[]]
+> 输入: ["MaxQueue","push_back","push_back","max_value","pop_front","max_value"] > [[],[1],[2],[],[],[]]
 > 输出: [null,null,null,2,1,2]
 
 **示例 2：**
 
-> 输入: 
-> ["MaxQueue","pop_front","max_value"]
-> [[],[],[]]
+> 输入:
+> ["MaxQueue","pop_front","max_value"] > [[],[],[]]
 > 输出: [null,-1,-1]
 
 #### 题目解析：
@@ -41,21 +39,11 @@
 
 下面我们来说一下双端队列。我们之前说过的队列，遵守先进先出的规则，双端队列则可以从队头出队，也可以从队尾出队。我们先通过一个视频来简单了解下双端队列。
 
-
-
 ![](https://img-blog.csdnimg.cn/20210319154950406.gif)
-
-
 
 我们可以用双端队列做辅助队列，用辅助队列来保存当前队列的最大值。我们同时定义一个普通队列和一个双端单调队列。普通队列就正常执行入队，出队操作。max_value 操作则返回咱们的双端队列的队头即可。下面我们来看一下代码的具体执行过程吧。
 
-
-
 ![](https://img-blog.csdnimg.cn/20210319154716931.gif)
-
-
-
-
 
 我们来对视频进行解析
 
@@ -74,10 +62,10 @@ class MaxQueue {
     public MaxQueue() {
         que = new LinkedList<>();
         deq = new LinkedList<>();
-    } 
-    //获取最大值值，返回我们双端队列的对头即可，因为我们双端队列是单调递减的嘛 
+    }
+    //获取最大值值，返回我们双端队列的对头即可，因为我们双端队列是单调递减的嘛
     public int max_value() {
-        return deq.isEmpty() ? -1 : deq.peekFirst(); 
+        return deq.isEmpty() ? -1 : deq.peekFirst();
     }
     //入队操作
     public void push_back(int value) {
@@ -94,11 +82,63 @@ class MaxQueue {
     public int pop_front() {
         if(que.isEmpty()) return -1;
         if (que.peek().equals(deq.peekFirst())) {
-            deq.pollFirst();            
+            deq.pollFirst();
         }
         return que.poll();
     }
 }
 ```
 
-### 
+GO Code:
+
+```go
+type MaxQueue struct {
+    que []int	// 普通队列
+    deq []int	// 双端队列
+    size int	// que的队列长度
+}
+
+
+func Constructor() MaxQueue {
+    return MaxQueue{
+        que: []int{},
+        deq: []int{},
+    }
+}
+
+// Is_empty 表示队列是否为空
+func (mq *MaxQueue) Is_empty() bool {
+    return mq.size == 0
+}
+
+// Max_value 取最大值值，返回我们双端队列的对头即可，因为我们双端队列是单调递减的嘛
+func (mq *MaxQueue) Max_value() int {
+    if mq.Is_empty() { return -1 }
+    return mq.deq[0]
+}
+
+// Push_back 入队
+func (mq *MaxQueue) Push_back(value int)  {
+    mq.que = append(mq.que, value)
+    // 维护单调递减队列
+    for len(mq.deq) != 0 && mq.deq[len(mq.deq) - 1] < value {
+        mq.deq = mq.deq[:len(mq.deq) - 1]
+    }
+    mq.deq = append(mq.deq, value)
+    mq.size++
+}
+
+// Pop_front 弹出队列头元素，并且返回其值。
+func (mq *MaxQueue) Pop_front() int {
+    if mq.Is_empty() { return -1 }
+    ans := mq.que[0]
+    mq.que = mq.que[1:]
+    if mq.deq[0] == ans {
+        mq.deq = mq.deq[1:]
+    }
+    mq.size--
+    return ans
+}
+```
+
+###

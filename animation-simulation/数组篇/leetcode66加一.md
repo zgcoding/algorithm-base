@@ -1,9 +1,8 @@
-> 如果阅读时，发现错误，或者动画不可以显示的问题可以添加我微信好友  **[tan45du_one](https://raw.githubusercontent.com/tan45du/tan45du.github.io/master/个人微信.15egrcgqd94w.jpg)** ，备注  github  + 题目 + 问题  向我反馈
+> 如果阅读时，发现错误，或者动画不可以显示的问题可以添加我微信好友 **[tan45du_one](https://raw.githubusercontent.com/tan45du/tan45du.github.io/master/个人微信.15egrcgqd94w.jpg)** ，备注 github + 题目 + 问题 向我反馈
 >
 > 感谢支持，该仓库会一直维护，希望对各位有一丢丢帮助。
 >
-> 另外希望手机阅读的同学可以来我的 <u>[**公众号：袁厨的算法小屋**](https://raw.githubusercontent.com/tan45du/test/master/微信图片_20210320152235.2pthdebvh1c0.png)</u> 两个平台同步，想要和题友一起刷题，互相监督的同学，可以在我的小屋点击<u>[**刷题小队**](https://raw.githubusercontent.com/tan45du/test/master/微信图片_20210320152235.2pthdebvh1c0.png)</u>进入。 
->
+> 另外希望手机阅读的同学可以来我的 <u>[**公众号：袁厨的算法小屋**](https://raw.githubusercontent.com/tan45du/test/master/微信图片_20210320152235.2pthdebvh1c0.png)</u> 两个平台同步，想要和题友一起刷题，互相监督的同学，可以在我的小屋点击<u>[**刷题小队**](https://raw.githubusercontent.com/tan45du/test/master/微信图片_20210320152235.2pthdebvh1c0.png)</u>进入。
 
 #### [66. 加一](https://leetcode-cn.com/problems/plus-one/)
 
@@ -42,7 +41,7 @@
 
 则我们根据什么来判断属于第几种情况呢？
 
-我们可以根据当前位 余10来判断，这样我们就可以区分属于第几种情况了，大家直接看代码吧，很容易理解的。
+我们可以根据当前位 余 10 来判断，这样我们就可以区分属于第几种情况了，大家直接看代码吧，很容易理解的。
 
 Java Code:
 
@@ -57,10 +56,10 @@ class Solution {
             if (digits[i] != 0) {
                 return digits;
             }
-        
+
         }
         //第三种情况，因为数组初始化每一位都为0，我们只需将首位设为1即可
-        int[] arr = new int[len+1]; 
+        int[] arr = new int[len+1];
         arr[0] = 1;
         return arr;
     }
@@ -84,4 +83,58 @@ class Solution:
         arr = [0] * (leng + 1)
         arr[0] = 1
         return arr
+```
+
+C++ Code:
+
+```cpp
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+        for(int i = digits.size() - 1; i >= 0; --i){
+            digits[i] = (digits[i] + 1)%10;
+            if(digits[i]) return digits;
+        }
+        for(int & x: digits) x = 0;
+        digits.emplace_back(1);
+        reverse(digits.begin(), digits.end());
+        return digits;
+    }
+};
+```
+
+Swift Code:
+
+```swift
+class Solution {
+    func plusOne(_ digits: [Int]) -> [Int] {
+        let count = digits.count
+        var digits = digits
+        for i in stride(from: count - 1, through: 0, by: -1) {
+            digits[i] = (digits[i] + 1) % 10
+            if digits[i] != 0 {
+                return digits
+            }
+        }
+        var arr: [Int] = Array.init(repeating: 0, count: count + 1)
+        arr[0] = 1
+        return arr
+    }
+}
+```
+
+Go Code:
+
+```go
+func plusOne(digits []int) []int {
+    l := len(digits)
+    for i := l - 1; i >= 0; i-- {
+        digits[i] = (digits[i] + 1) % 10
+        if digits[i] != 0 {
+            return digits
+        }
+    }
+    digits = append([]int{1}, digits...)
+    return digits
+}
 ```
