@@ -28,7 +28,7 @@
 
 所以基地里的题解都尽量用动画模拟，加深大家对题目的理解。往下看吧
 
-另外因为一个人的精力有限，所以基地目前只有 JAVA 代码，欢迎大家[贡献其他版本代码]()
+另外因为一个人的精力有限，所以基地目前大部分题目还只有 JAVA 代码，欢迎大家[贡献其他版本代码]()
 
 贡献仓库注意事项
 
@@ -43,19 +43,25 @@
 
 如果老哥觉得仓库很用心的话，麻烦大佬帮忙点个 star ，这也是我们一直更新下去的动力。
 
+另外我把我刚开始刷题时，让我受益匪浅的谷歌大佬的刷题笔记，整理打包了一下，如果你们也需要的话，可以自行下载。
+
+> 链接: https://pan.baidu.com/s/1miPqTeY92EafI78D-3Kpvg 提取码: 620l
+
 感谢支持，该仓库会一直维护，希望对各位有一丢丢帮助.
 
-> 另外我和几位老哥，给刚开始刷题，但是不知道从哪里开始刷的同学，整理了一份 【刷题大纲 】可以先按这个顺序刷，刷完之后应该就能入门，当然该仓库的大部分题解也是来自那个大纲。
->
-> 需要的同学可以扫描下方二维码回复【刷题大纲】获取
-
-另外我把我参加了几十场面试的心得体会及一些常考知识点，进行了总结，应该能够对大家有一些帮助，需要的老哥可以自行下载。
-
-> [**下载地址**](https://wwr.lanzoui.com/iJT03ty9ycd)
-
-想要手机阅读的大佬，可以来我的[公众号：袁厨的算法小屋](https://cdn.jsdelivr.net/gh/tan45du/test@master/微信图片_20210320152235.wp1ysdbibsw.png)进行阅读，两个平台同步更新，另外我最近建了一个秋招群，主要面向 2023 届，具体细节可以看这篇文章，[建了一个秋招群（2023）](https://mp.weixin.qq.com/s/nWcyTu8a-FXXgYjO4Sra1Q)需要的同学可以扫描二维码，点击求职交流，选择校招/社招。
+如果你需要加入**刷题/秋招小队**的话，可以扫描下方二维码，回复 校招/社招 即可，该小队永不收费，也不会有人发广告，仅仅用作交流，但是希望大家进入时，可以备注自身情况，并做一个简短的自我介绍。
 
 <div  align="center">  <img src="https://cdn.jsdelivr.net/gh/tan45du/test@master/美化.1kdnk85ce5c0.png" width = "150px" hight = "150px"/> </div>
+
+**如果你觉得 Github 加载不稳定的话，可以来我的个人网站进行阅读**
+
+网站地址：www.chengxuchu.com
+
+![www.chengxuchu.com](https://gitee.com/cookchef/test/raw/master/img/%E5%B0%81%E9%9D%A2%E7%9A%84%E5%89%AF%E6%9C%AC.png)
+
+如果在阅读过程中，有什么问题或者建议 或者需要其他科目的面经 都可以点击下方链接 call me。
+
+[联系厨子](http://www.chengxuchu.com/#/Exchange/README)
 
 ---
 
@@ -216,41 +222,7 @@
 
 - 敬请期待。。。
 
----
-
-### 🛬 一些分享
-
-- [刷题时常用函数](https://github.com/chefyuan/algorithm-base/blob/main/animation-simulation/Leetcode%E5%B8%B8%E7%94%A8%E7%B1%BB%E5%92%8C%E5%87%BD%E6%95%B0.md)
-- [厨子的 2020](https://github.com/chefyuan/algorithm-base/blob/main/animation-simulation/%E4%B8%80%E4%BA%9B%E5%88%86%E4%BA%AB/%E5%8E%A8%E5%AD%90%E7%9A%842020.md)
-- [在家如何高效学习](https://github.com/chefyuan/algorithm-base/blob/main/animation-simulation/%E4%B8%80%E4%BA%9B%E5%88%86%E4%BA%AB/%E5%AD%A6%E4%B9%A0.md)
-- [比特币原理详解](https://github.com/chefyuan/algorithm-base/blob/main/animation-simulation/%E4%B8%80%E4%BA%9B%E5%88%86%E4%BA%AB/%E5%8C%BA%E5%9D%97%E9%93%BE%E8%AF%A6%E8%A7%A3.md)
-- [github 年报](https://mp.weixin.qq.com/s/_-6h9D8VaXUtNenTXbTp5w)
-- [如何在电脑同时登陆两个微信](https://mp.weixin.qq.com/s/HpdMxTvR_0XxIUbaRja6cw)
-- [那些贼好用的写作软件](https://github.com/chefyuan/algorithm-base/blob/main/animation-simulation/%E4%B8%80%E4%BA%9B%E5%88%86%E4%BA%AB/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB.md)
-- [那些贼牛皮的办公工具](https://mp.weixin.qq.com/s/mJL1xCGZ3zJEPsrwg5d7oQ)
-
-### 🧊 阅读分享
-
-- [高效阅读法](https://mp.weixin.qq.com/s/ZJZyZFM4qCjOnz14CVYbmg)
-
-### 🍭 面经
-
-- [校招进腾讯，二本也可以？](https://mp.weixin.qq.com/s/GZtdcHB94bwKVyaopSODuQ)
-
-- [一个半月拿到阿里字节拼多多美团 offer 总结](https://mp.weixin.qq.com/s/YziTP0jqYSNS0mP18qGlAw)
-- [从大学到秋招，我如何拿下腾讯 offer](https://mp.weixin.qq.com/s/-Uez375ECoBda_a3coOegw)
-- [在腾讯连拿六个五星](https://mp.weixin.qq.com/s/tgSgZ-VeZwqyQYiMu2a4HQ)
-
-### 🍰 数据库学习
-
-- [100 道 mysql 经典面试题](https://mp.weixin.qq.com/s/aFoFHGFJXhP4gMWzYhB0Tw)
-- [Redis 为什么那么快？](https://mp.weixin.qq.com/s/iyA9IppYtvHuLGbWtU84_w)
-
-### 🍫 计算机基础
-
-- [操作系统](https://mp.weixin.qq.com/s/lh6an9l6av7XitrVLLyEKw)
-
-拼命更新中。。。。。。
+> > > > > > >
 
 ---
 
